@@ -45,6 +45,7 @@
         
         .navbar {
             opacity: 0.3;
+            z-index: 90;
         }
         
         .navbar:hover {
