@@ -18,9 +18,9 @@
     <title>{{ page.title }}</title>
 </head>
 
-<body>
+<body id="home" data-spy="scroll" data-target=".navbar">
     <!--nav  -->
-    <nav class="navbar navbar-toggleable-sm navbar-light bg-primary">
+    <nav class="navbar navbar-toggleable-sm navbar-light bg-primary" id="navbarNav">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -30,11 +30,11 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                 <div class="navbar-nav ">
                     <a class=" nav-item nav-link active text-white" href="#">Home <span class="sr-only">(current)</span></a>
-                    <a class="nav-item nav-link text-white" href="#">About</a>
-                    <a class="nav-item nav-link text-white" href="#">Portfolio</a>
-                    <a class="nav-item nav-link text-white" href="#">Resume</a>
+                    <a class="nav-item nav-link text-white" href="#About">About</a>
+                    <a class="nav-item nav-link text-white" href="#portfolio">Portfolio</a>
+                    <a class="nav-item nav-link text-white" href="#resume">Resume</a>
                     <a class="nav-item nav-link text-white" href="/blog">Blog</a>
-                    <a class="nav-item nav-link text-white" href="">Contact</a>
+                    <a class="nav-item nav-link text-white" href="#contact">Contact</a>
                 </div>
             </div>
         </div>
