@@ -67,4 +67,3 @@ Lexical scope is sometimes referred to as Static Scope, as opposed to Dynamic Sc
 
 Dynamic Scope on the other hand has a variable name defined within a function but it's scope is the time period of the functions exection. A local definition of the variable is first sought, then followed by a lookup on the call stack for the variable definition.
 
-Lexical scoping ensures
