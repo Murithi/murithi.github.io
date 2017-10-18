@@ -20,27 +20,8 @@
 
 <body id="home" data-spy="scroll" data-target=".navbar">
     <!--nav  -->
-    <nav class="navbar navbar-toggleable-sm navbar-light bg-primary fixed-top" id="navbarNav">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="container">
-            <a class="navbar-brand text-white" href="https://murithi.github.io/">Eric Murithi</a>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-                <div class="navbar-nav ">
-                    <a class=" nav-item nav-link active text-white" href="https://murithi.github.io/">Home <span class="sr-only">(current)</span></a>
-                    <a class="nav-item nav-link text-white" href="https://murithi.github.io/#About">About</a>
-                    <a class="nav-item nav-link text-white" href="https://murithi.github.io/#portfolio">Portfolio</a>
-                    <a class="nav-item nav-link text-white" href="https://murithi.github.io/#resume">Resume</a>
-                    <a class="nav-item nav-link text-white" href="/blog">Blog</a>
-                    <a class="nav-item nav-link text-white" href="https://murithi.github.io/#contact">Contact</a>
-                </div>
-            </div>
-        </div>
-
-    </nav>
-    <div class="container-fluid">
+    {% include navigation.html %}
+    <div class="container mt-5 pt-5">
 
         {{ content }}
 
