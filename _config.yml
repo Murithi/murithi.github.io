@@ -5,7 +5,7 @@ title: Karakana blog
 email: ericmurithi@karakana.co.ke
 description: >- # this means to ignore newlines until "baseurl:"
   Views on the internet & mobile technology and development.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "murithi.github.io" # the subpath of your site, e.g. /blog
 twitter_username: Amurithi
 github_username: emurithi
 kramdown:
