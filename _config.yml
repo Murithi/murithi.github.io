@@ -8,3 +8,6 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 twitter_username: Amurithi
 github_username: emurithi
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
