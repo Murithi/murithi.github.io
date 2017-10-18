@@ -1,9 +1,10 @@
-name: Eric Murithi, Web Developer, UI/UX Enthusiast
+name:  Murithi M'Inoti, Web Developer, UI/UX Enthusiast
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
 title: Karakana blog
 email: ericmurithi@karakana.co.ke
-description: >- Views on the internet & mobile technology and development
-baseurl:""
-twitter_username: amurithi
+description: >- # this means to ignore newlines until "baseurl:"
+  Views on the internet & mobile technology and development.
+baseurl: "" # the subpath of your site, e.g. /blog
+twitter_username: Amurithi
 github_username: emurithi

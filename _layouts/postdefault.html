@@ -15,43 +15,15 @@
     <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
     <!-- Local CSS  -->
     <link rel="stylesheet" href="../main.css">
-    <title>Eric Murithi, Web Developer, Launches Site</title>
+    <title>{{ page.title }}</title>
 </head>
 
 <body id="home" data-spy="scroll" data-target=".navbar">
     <!--nav  -->
-    <nav class="navbar navbar-toggleable-sm navbar-light bg-primary fixed-top" id="navbarNav">
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="container">
-        <a class="navbar-brand text-white" href="https://murithi.github.io">Murithi M'Inoti</a>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-            <div class="navbar-nav ">
-                <a class=" nav-item nav-link active text-white" href="http://localhost:4000/index.html">Home
-                    <span class="sr-only">(current)</span>
-                </a>
-                <a class="nav-item nav-link text-white" href="http://localhost:4000/about.html">About Me</a>
-
-            </div>
-        </div>
-    </div>
-
-</nav>
+    {% include navigation.html %}
     <div class="container mt-5 pt-5">
 
-        <div class="container mb-5 mt-5">
-
-  <h1>Eric Murithi, Web Developer, Launches Site</h1>
-  <p class="meta">16 Oct 2017</p>
-
-  <div class="post container">
-    <p>Well. Finally got around to putting this old website together. Neat thing about it - powered by <a href="http://jekyllrb.com">Jekyll</a> and I can use Markdown to author my posts. It actually is a lot easier than I thought it was going to be.</p>
-
-  </div>
-
-</div>
+        {{ content }}
 
     </div>
     <!-- /.container -->
