@@ -4,13 +4,81 @@
 	<title>Eric Murithi's Blog</title>
 	<link href="http://murithi.github.io/blog/atom.xml" rel="self"/>
 	<link href="http://murithi.github.io/blog"/>
-	<updated>2017-10-18T22:14:40+03:00</updated>
+	<updated>2017-10-19T08:13:35+03:00</updated>
 	<id>http://murithi.github.io/blog</id>
 	<author>
 		<name>Eric Murithi</name>
 		<email>ericinoti@gmail.com</email>
 	</author>
 
+	
+		<entry>
+			<title>Closure in Javascript</title>
+			<link href="http://murithi.github.io/blog/2017/10/16/second-post"/>
+			<updated>2017-10-16T00:00:00+03:00</updated>
+			<id>http://murithi.github.io/blog/2017/10/16/second-post</id>
+			<content type="html">&lt;p&gt;Scope refers to the context of execution, the context in which values and expressions are “visible” and or can be refered to. Outside of this, the variable can’t be used. Scope can be said to be a set of rules that indicate where we should look for a variable.&lt;/p&gt;
+
+&lt;p&gt;Scope is layered in hierarchy in Javascript. This means that child scopes have access to parent scopes, but not vice versa.&lt;/p&gt;
+
+&lt;h2 id=&quot;variable-scope&quot;&gt;Variable scope&lt;/h2&gt;
+&lt;p&gt;Normally variables in Javascript will either be defined in global or local scope. A variable declared outside a function is global. Otherwise, variables are limited to the local scope of the function in which they are defined.&lt;/p&gt;
+
+&lt;h3 id=&quot;global-scope&quot;&gt;Global Scope&lt;/h3&gt;
+
+&lt;p&gt;A variable declared as global lives throughout run-time. It is accessible and alterable in any scope as the global scope is a parent to all scopes in the execution.&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;//carname is  accessible here&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;carname&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Mercedes Benz&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;car&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;carname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//carname is accessible from within here&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//carname is  accessible here&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;h3 id=&quot;local-scope&quot;&gt;Local Scope&lt;/h3&gt;
+
+&lt;p&gt;Local scope is available only within the function wherein it’s defined. Variables living here have their scope recreated with every call of the function during runtime. The variables remain inaccessible unless reference is within the local scope of the function.&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;//carname is not accessible here&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;car&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;carname&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Mercedes Benz&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//carname is accessible from within here&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//carname is not accessible here&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;block-scope&quot;&gt;Block scope&lt;/h3&gt;
+&lt;p&gt;ECMAScript 6 (ES6/ES2015) introduced light-weight blocks using the &lt;em&gt;let&lt;/em&gt; and &lt;em&gt;const&lt;/em&gt; keywords. This still refers to the local scope but within the block. Thus access to a variable is confined to the scope of the block in which it’s defined. This scope is also only created during runtime anytime the block is executed in the stack and accessibility is only from within the block.&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;//carname is not accessible here&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;carname&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Mercedes Benz&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;vehiclename&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Mercedes Benz&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//carname is accessible from within here&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;carname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//Mercedes &lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;vehiclename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//Mercedes Benz&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;carname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//Mercedes Benz&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;vehiclename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//Uncaught ReferenceError: vehiclename is not defined&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;The &lt;em&gt;vehiclename&lt;/em&gt; variable is only accessible inside the block scope.&lt;/p&gt;
+
+&lt;h3 id=&quot;lexical-scoping&quot;&gt;Lexical Scoping&lt;/h3&gt;
+
+&lt;p&gt;Javascript has lexical scoping with functions. Within lexical scopes, a variable name’s scope is restricted to that function, within the function definition. It lives and is bound here, and outside the function it can’t be referenced.
+&lt;em&gt;It is important to note that curly braces &lt;strong&gt;{}&lt;/strong&gt;  in Javascript do not create a new scope. This is because (prior to the ECMA 6 standard) curly braces do not create a new scope. Only through the creation a new function is a new scope created.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Lexical scope is sometimes referred to as Static Scope, as opposed to Dynamic Scope.&lt;/p&gt;
+
+&lt;p&gt;Dynamic Scope on the other hand has a variable name defined within a function but it’s scope is the time period of the functions exection. A local definition of the variable is first sought, then followed by a lookup on the call stack for the variable definition.&lt;/p&gt;
+
+</content>
+		</entry>
 	
 		<entry>
 			<title>Scope in Javascript</title>
