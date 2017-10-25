@@ -28,14 +28,7 @@
                 <h1>Stay up to date</h1>
                 <p>Get the latest articles and other content straight into your inbox
                 </p>
-                <form class="subscription">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                        <small id="emailHelp" class="form-text text-warning">We'll never share your email with anyone else.</small>
-                    </div>
-                    <button type="button" class="btn btn-danger btn-lg btn-block">SIGN ME UP</button>
-                </form>
+                {% include subscription-form.html %}
             </div>
         </div>
 
