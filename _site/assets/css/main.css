@@ -58,18 +58,59 @@ nav:hover {
   background-image: url('http://res.cloudinary.com/murithi/image/upload/v1496942003/ericresizedmap_e381ty.jpg');
 }
 
-.blog-header {
+/* .blog-header {
   background-size: cover;
   background-color: #ff8f5e;
   background-position: center top;
   margin-top: -100px;
-  margin-left: 0;
-  margin-right: 0;
-
-  max-height: 600px;
+  max-height: 300px;
 }
 .blog-header-image {
-  background-image: url('http://res.cloudinary.com/murithi/image/upload/v1496942003/ericresizedmap_e381ty.jpg');
+  background-image: url('http://res.cloudinary.com/murithi/image/upload/v1508926155/cover_dzurdq.png');
+} */
+
+.blog-container {
+  position: relative;
+  background: gray;
+  overflow: hidden;
+}
+
+.blog-container:before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0.4;
+  background-image: url('http://res.cloudinary.com/murithi/image/upload/v1508926155/cover_dzurdq.png');
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  -ms-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.blog-container h1 {
+  text-align: center;
+  z-index: 2;
+  position: relative;
+  color: #fff;
+}
+.blog-container p {
+  text-align: center;
+  z-index: 2;
+  position: relative;
+  color: #fff;
+}
+.subscription {
+  text-align: center;
+  z-index: 2;
+  position: relative;
 }
 /* #portfolio {
     background-color: #0275d8;

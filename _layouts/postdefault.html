@@ -6,14 +6,13 @@
 
 <body id="home" data-spy="scroll" data-target=".navbar">
     <!--nav  -->
-    {% include navigation.html %}
+    {% include navigation.html %} {{ content }}
     <div class="container mt-5 pt-5">
 
-        {{ content }}
 
     </div>
     <!-- /.container -->
-
+    {% include comments.html %}
     <!--footer  -->
     <div class="row py-3 bg-primary">
 
