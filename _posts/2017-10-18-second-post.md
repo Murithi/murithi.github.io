@@ -3,6 +3,7 @@ layout: post
 title: "Closure in Javascript"
 date: 2017-10-16
 author: Murithi M'Inoti
+comments: true
 ---
 
 Scope refers to the context of execution, the context in which values and expressions are "visible" and or can be refered to. Outside of this, the variable can't be used. Scope can be said to be a set of rules that indicate where we should look for a variable. 
