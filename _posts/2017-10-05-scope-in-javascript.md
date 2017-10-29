@@ -35,7 +35,7 @@ A variable declared as global lives throughout run-time. It is accessible and al
 
 While global scope is useful in programming, it's not always good practise. Following the "<a href="https://en.wikipedia.org/wiki/Principle_of_least_privilege" target="_blank">Principle of Least Privilege</a>" in software design, it's always best to apply scope-hiding techniques. This entails declaring variables nested inside blocks or functions. This creates what we call local scope. 
 
-In Javascript, a locally scope variable is available only within the function wherein it's defined. Variables living here have their scope recreated with every call of the function during runtime. The variables remain inaccessible unless reference is within the local scope of the function. 
+In Javascript, a locally scoped variable is available only within the function wherein it's defined. Variables living here have their scope recreated with every call of the function during runtime. The variables remain inaccessible unless reference is within the local scope of the function. 
 
 ```javascript
             //carname is not accessible here
