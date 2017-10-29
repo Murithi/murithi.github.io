@@ -4,6 +4,7 @@ title: "Scope in Javascript"
 date: 2017-10-16
 author: Murithi M'Inoti
 comments: true
+tags: Javascript
 ---
 
 Scope can be said to be a set of rules that indicate where we should look for a variable. It defines the area where variables are available. A variable will normally belong to a certain context of execution. In this context certain variables- *values and expressions* are "visible" and or can be refered to. Outside of this, the variable can't be used. 
