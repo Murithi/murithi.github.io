@@ -6,11 +6,49 @@ author: Murithi M'Inoti
 comments: true
 ---
 
-Scope refers to the context of execution, the context in which values and expressions are "visible" and or can be refered to. Outside of this, the variable can't be used. Scope can be said to be a set of rules that indicate where we should look for a variable. 
+Closure according to Kyle Simpson "*when a function remembers it's lexical scope even when the function is executed outside that lexical scope*"
 
-Scope is layered in hierarchy in Javascript. This means that child scopes have access to parent scopes, but not vice versa. 
+One of the ways of using closure is by passing a function as a callback as seen below.
+
+```javascript
+    function personalDetails(){
+        var name="John Locke";
+        function logName(){
+            console.log(name);
+        }
+        printName(logName);
+    }
+    function printName(logName){
+        logName();
+    }
+
+    personalDetails();
+```
+
+*logName()* function references the *name* variable. Function *logName()* is then passed to *printName()* as a callback. When *logName()* is executed inside *printName()*, it's in a different scope from where it was declared. *logName()* can still access the *name* variable. We say that *logName()* closes over variable *name* because it makes access to it available in an outer lexical scope.
+
+Another way of doing this is could be by returning the *logName* function
+
+```javascript
+    function personalDetails(){
+        var name="John Locke";
+        return function logName(){
+            console.log(name);
+        }
+    }
+    function printName(){
+        personalDetails()();
+    }
+
+    printName();
+```
+In this case, the inner function references *name* and is returned. It is closed the variable *name* and when it's executed it's still got access.
+
+A closure is a characteristic of a function, not a function.
+
 
 ## Variable scope
+
 Normally variables in Javascript will either be defined in global or local scope. A variable declared outside a function is global. Otherwise, variables are limited to the local scope of the function in which they are defined. 
 
 
@@ -42,6 +80,7 @@ function car() {
 ```
 
 ### Block scope
+
 ECMAScript 6 (ES6/ES2015) introduced light-weight blocks using the *let* and *const* keywords. This still refers to the local scope but within the block. Thus access to a variable is confined to the scope of the block in which it's defined. This scope is also only created during runtime anytime the block is executed in the stack and accessibility is only from within the block.
 
 

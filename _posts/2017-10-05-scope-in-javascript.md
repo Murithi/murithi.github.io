@@ -9,7 +9,7 @@ categories: Javascript
 slug: Scope can be said to be a set of rules that indicate where we should look for a variable. It defines the area where variables are available. A variable will normally belong to a certain context of execution
 ---
 
-Scope can be said to be a set of rules that indicate where we should look for a variable. It defines the area where variables are available. A variable will normally belong to a certain context of execution. In this context certain variables- *values and expressions* are "visible" and or can be refered to. Outside of this, there's no access to the variable. 
+Scope can be said to be a set of rules that indicate where we should look for a variable. It defines the area where variables are available. A variable will normally belong to a certain context of execution. In this context certain variables- *values and expressions* are "visible" and or can be refered to. Outside of this, there's no access to the variable. This context will be either an enclosing function, a block (*new feature with ES6*) or global.
 
 
 
@@ -33,9 +33,15 @@ A variable declared as global lives throughout run-time. It is accessible and al
             console.log(carname); // Mercedes Benz
             //carname is  accessible here
 ```
+
+In Javascript, if an assignment is made to an undeclared variable, a global variable is declared implicitly. This means that that variable becomes a property of the global object when the assignment is executed.
+
+It's always recommended to always declare variables, regardless of their scope. In <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode">strict mode </a>, any assignments to an undeclared variable will throw an error.
 ### Local Scope
 
-While global scope is useful in programming, it's not always good practise. Following the "<a href="https://en.wikipedia.org/wiki/Principle_of_least_privilege" target="_blank">Principle of Least Privilege</a>" in software design, it's always best to apply scope-hiding techniques. This entails declaring variables nested inside blocks or functions. This creates what we call local scope. 
+While global scope is useful in programming, it's not always good practise. The practice of declaring unnecessary global variables is referred to as polluting the global scope. 
+
+Following the "<a href="https://en.wikipedia.org/wiki/Principle_of_least_privilege" target="_blank">Principle of Least Privilege</a>" in software design, it's always best to apply scope-hiding techniques. This entails declaring variables nested inside blocks or functions. This creates what we call local scope. 
 
 In Javascript, a locally scoped variable is available only within the function wherein it's defined. Variables living here have their scope recreated with every call of the function during runtime. The variables remain inaccessible unless reference is within the local scope of the function. 
 
