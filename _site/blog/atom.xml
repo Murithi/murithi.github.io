@@ -4,7 +4,7 @@
 	<title>Eric Murithi's Blog</title>
 	<link href="http://murithi.github.io/blog/atom.xml" rel="self"/>
 	<link href="http://murithi.github.io/blog"/>
-	<updated>2017-10-29T22:33:50+03:00</updated>
+	<updated>2017-10-30T11:51:48+03:00</updated>
 	<id>http://murithi.github.io/blog</id>
 	<author>
 		<name>Eric Murithi</name>
@@ -14,10 +14,10 @@
 	
 		<entry>
 			<title>Scope in Javascript</title>
-			<link href="http://murithi.github.io/blog/2017/10/16/scope-in-javascript"/>
+			<link href="http://murithi.github.io/blog/2017/10/16/Scope-can-be-said-to-be-a-set-of-rules-that-indicate-where-we-should-look-for-a-variable.-It-defines-the-area-where-variables-are-available.-A-variable-will-normally-belong-to-a-certain-context-of-execution"/>
 			<updated>2017-10-16T00:00:00+03:00</updated>
-			<id>http://murithi.github.io/blog/2017/10/16/scope-in-javascript</id>
-			<content type="html">&lt;p&gt;Scope can be said to be a set of rules that indicate where we should look for a variable. It defines the area where variables are available. A variable will normally belong to a certain context of execution. In this context certain variables- &lt;em&gt;values and expressions&lt;/em&gt; are “visible” and or can be refered to. Outside of this, the variable can’t be used.&lt;/p&gt;
+			<id>http://murithi.github.io/blog/2017/10/16/Scope can be said to be a set of rules that indicate where we should look for a variable. It defines the area where variables are available. A variable will normally belong to a certain context of execution</id>
+			<content type="html">&lt;p&gt;Scope can be said to be a set of rules that indicate where we should look for a variable. It defines the area where variables are available. A variable will normally belong to a certain context of execution. In this context certain variables- &lt;em&gt;values and expressions&lt;/em&gt; are “visible” and or can be refered to. Outside of this, there’s no access to the variable.&lt;/p&gt;
 
 &lt;h2 id=&quot;variable-scope&quot;&gt;Variable scope&lt;/h2&gt;
 &lt;p&gt;Normally variables in Javascript will either be defined in global or local scope. A variable declared outside a function is global. Otherwise, variables are limited to the local scope of the function in which they are defined.&lt;/p&gt;
@@ -40,9 +40,9 @@
 &lt;/div&gt;
 &lt;h3 id=&quot;local-scope&quot;&gt;Local Scope&lt;/h3&gt;
 
-&lt;p&gt;While global scope is useful in programming, it’s not always good practise. Following the “&lt;a href=&quot;https://en.wikipedia.org/wiki/Principle_of_least_privilege&quot; target=&quot;_blank&quot;&gt;Principle of Least Privilege&lt;/a&gt;” in software design, we apply scope-hiding techniques. This entails declaring variables nested inside blocks or functions. This creates what we call local scope.&lt;/p&gt;
+&lt;p&gt;While global scope is useful in programming, it’s not always good practise. Following the “&lt;a href=&quot;https://en.wikipedia.org/wiki/Principle_of_least_privilege&quot; target=&quot;_blank&quot;&gt;Principle of Least Privilege&lt;/a&gt;” in software design, it’s always best to apply scope-hiding techniques. This entails declaring variables nested inside blocks or functions. This creates what we call local scope.&lt;/p&gt;
 
-&lt;p&gt;Local scope is available only within the function wherein it’s defined. Variables living here have their scope recreated with every call of the function during runtime. The variables remain inaccessible unless reference is within the local scope of the function.&lt;/p&gt;
+&lt;p&gt;In Javascript, a locally scoped variable is available only within the function wherein it’s defined. Variables living here have their scope recreated with every call of the function during runtime. The variables remain inaccessible unless reference is within the local scope of the function.&lt;/p&gt;
 
 &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;            &lt;span class=&quot;c1&quot;&gt;//carname is not accessible here&lt;/span&gt;
             &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;car&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -55,7 +55,7 @@
 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-&lt;p&gt;As you can see the variable &lt;em&gt;carname&lt;/em&gt; declared within the function is not reachable from outside the function. Thus a functional has it’s local scope and variables within it cannot be accessed from outside.&lt;/p&gt;
+&lt;p&gt;As you can see the variable &lt;em&gt;carname&lt;/em&gt; declared within the function is not reachable from outside the function. Thus a function has it’s local scope and variables within it cannot be accessed from outside.&lt;/p&gt;
 
 &lt;h3 id=&quot;function-scope&quot;&gt;Function Scope&lt;/h3&gt;
 &lt;p&gt;Javascript has lexical scoping with functions. Within lexical scopes, a variable name’s scope is restricted to that function, within the function definition. It lives and is bound here, and outside the function it can’t be referenced.
@@ -91,7 +91,9 @@
 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-&lt;p&gt;The way to create block scope was through Immediately Invoked Function Expressions (IIFE) pattern.&lt;/p&gt;
+&lt;p&gt;As you can see, &lt;em&gt;carname&lt;/em&gt; even when declared within the block still refers to the globally scoped variable of the same name. Any updates within the block affected the globally scoped variable, because in reality, &lt;em&gt;carname&lt;/em&gt; within the block still refers to the globally scoped variable of the same name. Evidently no locally scoped variable is created.&lt;/p&gt;
+
+&lt;p&gt;Previously, the way to create block scope was by using Immediately Invoked Function Expressions (IIFE) pattern.&lt;/p&gt;
 &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;            &lt;span class=&quot;c1&quot;&gt;//IIFE Demo&lt;/span&gt;
             &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;carname&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Mercedes Benz'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
             &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;car&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;carname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -105,7 +107,7 @@
 &lt;/div&gt;
 &lt;p&gt;The output of &lt;em&gt;carname&lt;/em&gt; within the function is changed within the function expression, without affecting global variable &lt;em&gt;carname&lt;/em&gt;.&lt;/p&gt;
 
-&lt;p&gt;ECMAScript 6 (ES6/ES2015) introduced light-weight blocks using the &lt;em&gt;let&lt;/em&gt; and &lt;em&gt;const&lt;/em&gt; keywords. This still refers to the local scope but within the block. Thus access to a variable is confined to the scope of the block in which it’s defined. This scope is also only created during runtime anytime the block is executed in the stack and accessibility is only from within the block.&lt;/p&gt;
+&lt;p&gt;ECMAScript 6 (ES6/ES2015) introduced light-weight blocks using the &lt;em&gt;let&lt;/em&gt; and &lt;em&gt;const&lt;/em&gt; keywords. These can be used to create a new local scope within the block. Thus access to a variable is confined to the scope of the block in which it’s defined. This scope is also only created during runtime anytime the block is executed in the stack and accessibility is only from within the block.&lt;/p&gt;
 
 &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;            &lt;span class=&quot;c1&quot;&gt;//Block Scope Demo&lt;/span&gt;
             &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;carname&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Mercedes Benz&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;

@@ -1,20 +1,39 @@
 --- 
 layout: postdefault 
-title: Posts
----
-
- {% include blogjumbo.html %} 
+ 
+--- 
+{% include blogjumbo.html %}
 <div class="container mb-5 mt-5">
-    <h1>{{ page.title }}</h1>
-    <ul class="posts">
+    
+    <div class="row">
+        <div class="col-8">
+        <h1>{{ page.title }}</h1>
+            
+                {% for post in site.posts %}
 
-        {% for post in site.posts %}
+                
+                   <h2 class="text-center"> <a class="postlist" href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a> <br/>
+                   <span class="text-center post-date">{{ post.date | date_to_string }}</span>
+                    <h2/>
+                        <div class="header-elem ">
+							<div class="tag-wrapper">
+								<a href="/tag/javascript/" class="tag-button tag-JavaScript">JavaScript</a>
+							</div>							
+					</div>
+                    <div class="postdescription">
+                    <p>{{post.slug}}</p>
+                    
+                    </div>
+                    <hr/>
+                {% endfor %}
+            
+        </div>
+        <div class="col-4">
+        <h1>Tags</h1>
+            <div class="well">Side Bar Content</div>
+        </div>
+    </div>
 
-        <li>
-            <div>{{post.slug}}</div>
-            <span>{{ post.date | date_to_string }}</span> »
-            <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li>
-        {% endfor %}
-    </ul>
+
+
 </div>
